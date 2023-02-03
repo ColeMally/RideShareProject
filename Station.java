@@ -23,4 +23,8 @@ public class Station {
     public int getStationNum(){
         return stationNum;
     }
+
+    public String toString(){
+        return super.toString() + " Number: " + stationNum + " Passengers: " + passList;
+    }
 }
