@@ -6,16 +6,21 @@ public class Station {
     public Station(int myStationNum){
         passList = new ArrayList<Passenger>();
         stationNum = myStationNum;
-
     }
 
-    public void addPassenger(Passenger cole){
+    public void addPassenger(Passenger junaid){
+        passList.add(junaid);
+    }
+    public void removePassenger(Passenger junaid){
+        passList.remove(junaid);
+    }
 
-    }
-    public void removePassenger(Passenger){
-        passList.remove(Passenger);
-    }
     ArrayList<Passenger> getList(){
+        return passList;
         
+    }
+
+    public int getStationNum(){
+        return stationNum;
     }
 }
