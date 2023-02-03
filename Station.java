@@ -10,8 +10,8 @@ public class Station {
     public void addPassenger(Passenger){
 
     }
-    Passenger remove(){
-
+    public void removePassenger(Passenger){
+        passList.remove(Passenger);
     }
     ArrayList<Passenger> getList(){
         
