@@ -15,7 +15,7 @@ public class Station {
         passList.remove(junaid);
     }
 
-    ArrayList<Passenger> getList(){
+    public ArrayList<Passenger> getList(){
         return passList;
         
     }
