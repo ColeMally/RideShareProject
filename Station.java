@@ -1,13 +1,15 @@
 import java.util.*;
 public class Station {
     ArrayList<Passenger> passList;
-    int number;
+    int stationNum;
 
-    public Station(){
+    public Station(int myStationNum){
+        passList = new ArrayList<Passenger>();
+        stationNum = myStationNum;
 
     }
 
-    public void addPassenger(Passenger){
+    public void addPassenger(Passenger cole){
 
     }
     public void removePassenger(Passenger){
