@@ -1,10 +1,13 @@
+import java.util.*;
 public class Road {
     private Station [] stops;
+    ArrayList<Car> cars;
     //constructor
     /**
      * Debug constructor for the Road-- just makes 5 stops and puts some passengers in
      */
     public Road(){
+        cars = new ArrayList<Car>();
         stops = new Station[5];
         for(int i = 0; i < stops.length; i++){
             stops[i] = new Station(i);
