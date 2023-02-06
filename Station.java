@@ -39,7 +39,22 @@ public class Station {
         return null;
     }
 
+    public Passenger nextRightPassenger(){
+        for(int i = 0; i < passList.size(); i++){
+            Passenger junaid = passList.get(i);
+            if(junaid.getDest() > stationNum){
+                passList.remove(i);
+                return junaid;
+            }
+        }
+        return null;
+    }
+
     public boolean hasleftPassenger(){
+        return false;
+    }
+
+    public boolean hasrightPassenger(){
         return false;
     }
 
