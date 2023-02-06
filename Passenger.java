@@ -2,9 +2,9 @@ public class Passenger{
     private int destination;
     private int location;
 
-    public Passenger(int myDestination, int myLocation){
-        destination = myDestination;
+    public Passenger(int myLocation, int myDestination){
         location = myLocation;
+        destination = myDestination;
     }
 
     public int getDest(){
