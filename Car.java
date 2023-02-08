@@ -25,7 +25,10 @@ public int getDest(){
     return destination;
 }
 
-//methods
+/**
+ * 
+ * @param s
+ */
 public void dropOff(Station s){
     int i = 0;
     while(i < p.size()){
@@ -39,7 +42,10 @@ public void dropOff(Station s){
         }
     }
 }
-//needs parameter
+/**
+ * 
+ * @param s
+ */
 public void pickUp(Station s){
     ArrayList<Passenger> waiting = s.getPass();
     int i = 0;
@@ -49,6 +55,9 @@ public void pickUp(Station s){
     }
 }
 
+/**
+ * 
+ */
 public void move(){
     if( destination - location > 0){
         location++;
@@ -56,4 +65,5 @@ public void move(){
         location--;
     }
 
+}
 }
