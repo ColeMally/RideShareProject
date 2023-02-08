@@ -6,6 +6,12 @@ public class Road {
     /**
      * Debug constructor for the Road-- just makes 5 stops and puts some passengers in
      */
+    /**
+     * 
+     * @param stationSize the number of Stations to make
+     * @param numPassengers the number of Passengers to create
+     * @param numCars the number of Cars to create
+     */
     public Road(int stationSize, int numPassengers, int numCars){
         stops = new Station[stationSize];
         for(int i = 0; i < stops.length; i++){

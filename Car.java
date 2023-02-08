@@ -18,7 +18,7 @@ public Car(int myRevenue, ArrayList<Passenger> myPassList, int myLocation, int m
 
 }
 
-    //methods
+//methods
 public void dropOff(){
 
 }
