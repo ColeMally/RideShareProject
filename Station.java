@@ -38,7 +38,11 @@ public class Station {
         }
         return null;
     }
-
+/**
+ * Hands over the next passengers from the right
+ * Removes the passenger from the station
+ * @return the next Passenger going right or null if there is none
+ */
     public Passenger nextRightPassenger(){
         for(int i = 0; i < passList.size(); i++){
             Passenger junaid = passList.get(i);
@@ -49,15 +53,15 @@ public class Station {
         }
         return null;
     }
-
+// checks if there is a passenger on the left
     public boolean hasleftPassenger(){
         return false;
     }
-
+// checks if there is a passenger on the right
     public boolean hasrightPassenger(){
         return false;
     }
-
+// Changes the memory name of 
     public String toString(){
         return super.toString() + " Number: " + stationNum + " Passengers: " + passList;
     }

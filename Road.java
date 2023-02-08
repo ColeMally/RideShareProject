@@ -24,6 +24,8 @@ public class Road {
             int stop = (int)(Math.random() * stationSize);
             fleet[i] = new Car(start, stop);
         }
+        //creates a random number of stations at the beginning and end
+        //adds passengers to stations
         for(int i = 0; i < numPassengers; i++){
             int start = (int)(Math.random() * stationSize);
             int stop = (int)(Math.random() * stationSize);
