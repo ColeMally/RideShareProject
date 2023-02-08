@@ -1,7 +1,7 @@
 import java.util.*;
 public class Road {
     private Station [] stops;
-    ArrayList<Car> cars;
+    private Car [] cars;
     //constructor
     /**
      * Debug constructor for the Road-- just makes 5 stops and puts some passengers in
@@ -18,11 +18,11 @@ public class Road {
             stops[i] = new Station(i);
         }
 
-        fleet = new Car[numCars];
-        for(int i = 0; i < fleet.length; i++){
+        cars = new Car[numCars];
+        for(int i = 0; i < cars.length; i++){
             int start = (int)(Math.random() * stationSize);
             int stop = (int)(Math.random() * stationSize);
-            fleet[i] = new Car(start, stop);
+            cars[i] = new Car(start, stop);
         }
         for(int i = 0; i < numPassengers; i++){
             int start = (int)(Math.random() * stationSize);
