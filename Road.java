@@ -6,19 +6,23 @@ public class Road {
     /**
      * Debug constructor for the Road-- just makes 5 stops and puts some passengers in
      */
-    public Road(){
-        cars = new ArrayList<Car>();
-        stops = new Station[5];
+    public Road(int stationSize, int numPassengers, int numCars){
+        stops = new Station[stationSize];
         for(int i = 0; i < stops.length; i++){
             stops[i] = new Station(i);
         }
 
-        //puts passengers in the stops
-        stops[0].addPassenger(new Passenger(0,3));
-        stops[0].addPassenger(new Passenger(0,4));
-
-        stops[2].addPassenger(new Passenger(2, 0));
-        stops[2].addPassenger(new Passenger(2, 3));
+        fleet = new Car[numCars];
+        for(int i = 0; i < fleet.length; i++){
+            int start = (int)(Math.random() * stationSize);
+            int stop = (int)(Math.random() * stationSize);
+            fleet[i] = new Car(start, stop);
+        }
+        for(int i = 0; i < numPassengers; i++){
+            int start = (int)(Math.random() * stationSize);
+            int stop = (int)(Math.random() * stationSize);
+            stops[start].addPassenger(new Passenger(start,stop));
+        }
     }
 
     //methods
