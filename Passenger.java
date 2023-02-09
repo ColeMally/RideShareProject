@@ -1,3 +1,9 @@
+/**
+ * @author Junaid Bhatti and Cole Mallinger
+ * @version 02/09/2023
+ * This program creates a passenger class that stores information about a passengers location and destination
+ * as well as methods for setting the passenger's location
+ */
 public class Passenger{
     int destination;
     int location;

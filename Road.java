@@ -1,4 +1,9 @@
-import java.util.*;
+/**
+ * @author Junaid Bhatti and Cole Mallinger
+ * @version 02/09/2023
+ * This program creates a road class that keeps track of the stations, cars, and passengers through arrays
+ * while also creating passengers, cars, and stations. It also has a method which updates the road to allow the cars to move
+ */
 public class Road {
     //fields
     /**
