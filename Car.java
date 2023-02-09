@@ -1,3 +1,8 @@
+/**
+ * @author Junaid Bhatti and Cole Mallinger
+ * @version 02/09/23
+ * This program creates a Car class that has information about the car as well as methods to move and drop off and pick up
+ */
 import java.util.ArrayList;
 
 public class Car {

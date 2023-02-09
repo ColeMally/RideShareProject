@@ -1,1 +1,2 @@
 # RideShareProject
+The Rideshare project is designed to simulate a rideshare app. Passengers have a random location and destination out of 31 stations. Cars are randomly assigned to their starting point and pick up and drop off passengers. In our design, we run the classes through the Car class because the cars have information about the other classes. We use the Road to create all the cars, passengers, and stations. We have 

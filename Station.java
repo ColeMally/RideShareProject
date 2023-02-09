@@ -1,3 +1,9 @@
+/**
+ * @author Junaid Bhatti and Cole Mallinger
+ * @version 02/09/23
+ * This program creates a Station class that has Arrays of stations and adds and removes passengers checks if there is
+ * a passenger on the left or right
+ */
 import java.util.*;
 public class Station {
     //fields
