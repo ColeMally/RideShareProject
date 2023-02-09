@@ -1,6 +1,6 @@
 public class Passenger{
-    private int destination;
-    private int location;
+    int destination;
+    int location;
     //constructing passenger fields
     public Passenger(int myLocation, int myDestination){
         location = myLocation;
@@ -18,7 +18,7 @@ public class Passenger{
     public void setLocation(int newLocation){
         location = newLocation;
     }
-    /
+    
     public String toString(){
         return super.toString() + "Location: "+ location + ", Destination: " + destination;
     }

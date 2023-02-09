@@ -1,7 +1,8 @@
 import java.util.*;
 public class Road {
-    private Station [] stops;
-    private Car [] cars;
+    static Station [] stops;
+    static Car [] cars;
+    static Passenger [] persons;
     //constructor
     /**
      * Debug constructor for the Road-- just makes 5 stops and puts some passengers in
