@@ -17,7 +17,9 @@ public class Road {
         for(int i = 0; i < stops.length; i++){
             stops[i] = new Station(i);
         }
-
+        /*
+         * creating cars
+         */
         cars = new Car[numCars];
         for(int i = 0; i < cars.length; i++){
             int start = (int)(Math.random() * stationSize);
@@ -34,6 +36,9 @@ public class Road {
     }
 
     //methods
+    /*
+     * 
+     */
     public String toString(){
         String s = super.toString();
         for(Station st : stops){
