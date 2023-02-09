@@ -18,10 +18,7 @@ public class Passenger{
     public void setLocation(int newLocation){
         location = newLocation;
     }
-<<<<<<< HEAD
     
-=======
->>>>>>> 681e2f1e5b765364b609c348f1ebdf59b870d06a
     public String toString(){
         return super.toString() + "Location: "+ location + ", Destination: " + destination;
     }

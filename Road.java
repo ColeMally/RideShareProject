@@ -25,7 +25,7 @@ public class Road {
         for(int i = 0; i < cars.length; i++){
             int start = (int)(Math.random() * stationSize);
             int stop = (int)(Math.random() * stationSize);
-            cars[i] = new Car(start, stop);
+            cars[i] = new Car(start,stop);
         }
         //creates a random number of stations at the beginning and end
         //adds passengers to stations
@@ -40,6 +40,12 @@ public class Road {
     /*
      * 
      */
+    public void roadUpdate(){
+        for(Car mobile : cars){
+            mobile.move();
+        }
+    }
+
     public String toString(){
         String s = super.toString();
         for(Station st : stops){

@@ -8,8 +8,7 @@ public class Car {
     int direction;
     static int revenue = 0;
     //constructors
-public Car(int myRevenue, int myLocation, int myDestination){
-    revenue = myRevenue;
+public Car(int myLocation, int myDestination){
     p = new ArrayList<Passenger>();
     location = myLocation;
     destination = myDestination;
@@ -29,7 +28,6 @@ public int getDest(){
     return destination;
 }
 
-<<<<<<< HEAD
 //method
 public void move(){
     revenue += p.size();
@@ -51,18 +49,6 @@ public void move(){
             junaid.setLocation(location);
             if(location == junaid.destination){
                 Road.stops[location].addPassenger(junaid);
-=======
-/**
- * 
- * @param s
- */
-public void dropOff(Station s){
-    int i = 0;
-    while(i < p.size()){
-        if(p.get(i).getDest() == location || location == destination){
-            if(p.get(i).getDest() != location){
-                s.addPassenger(p.get(i));
->>>>>>> 681e2f1e5b765364b609c348f1ebdf59b870d06a
                 p.remove(i);
                 i--;
             }
@@ -82,36 +68,9 @@ public void dropOff(Station s){
         }
     }
 }
-<<<<<<< HEAD
 
 public static double averageRevenue(){
     double avg = revenue/(double)(Road.cars.length);
     return avg;
 }
-=======
-/**
- * 
- * @param s
- */
-public void pickUp(Station s){
-    ArrayList<Passenger> waiting = s.getPass();
-    int i = 0;
-    while (i< waiting.size()){
-        Passenger p = waiting.get(i);
-        if(p.getLocation() == location && ((p.getDest)))
-    }
-}
-
-/**
- * 
- */
-public void move(){
-    if( destination - location > 0){
-        location++;
-    } else if( destination - location < 0){
-        location--;
-    }
-
-}
->>>>>>> 681e2f1e5b765364b609c348f1ebdf59b870d06a
 }
