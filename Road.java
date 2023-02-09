@@ -1,5 +1,12 @@
 import java.util.*;
 public class Road {
+    //fields
+    /**
+     * creates three new empty arrays
+     * Stops is for the stations
+     * Cars is for all cars
+     * Persons is for passengers
+     */
     static Station [] stops;
     static Car [] cars;
     static Passenger [] persons;
@@ -38,7 +45,7 @@ public class Road {
 
     //methods
     /**
-     * 
+     * Allows the road to get the updated passengers and movement of the cars
      */
     public void roadUpdate(){
         for(Car mobile : cars){

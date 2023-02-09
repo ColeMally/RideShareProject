@@ -2,45 +2,57 @@ import java.util.ArrayList;
 
 public class Car {
     //fields
+    /**
+     * Location, destination, and direction are all integers for the passenger 
+     * static revenue so it can be accessed by all the cars
+     */
     public ArrayList<Passenger> p;
     int location;
     int destination;
     int direction;
     static int revenue = 0;
     //constructors
+    //initialization of arraylist of passengers and of location and destination integers
 public Car(int myLocation, int myDestination){
     p = new ArrayList<Passenger>();
     location = myLocation;
     destination = myDestination;
-    if(location < destination){
+    if(location < destination){  //check if the cars moving to the right
         direction = 1;
     }
-    if(location > destination){
+    if(location > destination){ //check if the cars moving to the left
         direction = -1;
     }
-
 }
+//methods
+/**
+ * gets location
+ * @return location
+ */
 public int getLoc(){
     return location;
 }
-
+/**
+ * gets destination
+ * @return destination
+ */
 public int getDest(){
     return destination;
 }
 
-//method
+
 public void move(){
-    revenue += p.size();
-    if(destination > location){
+    revenue += p.size(); //$1 for each passenger in the car
+    if(destination > location){ //if car destination > location then car will move forward
         location++;
-    } else if(destination < location){
+    } else if(destination < location){ //if car destination < location then car will move backward
         location--;
     }
     if(destination== location){
         while(p.size() != 0){
             Passenger junaid = p.get(0);
             junaid.setLocation(location);
-            Road.stops[location].addPassenger(junaid);
+            Road.stops[location].addPassenger(junaid); //moves passenger junaid into the car
             p.remove(0);
         }
     }else{
@@ -48,16 +60,17 @@ public void move(){
             Passenger junaid = p.get(i);
             junaid.setLocation(location);
             if(location == junaid.destination){
-                Road.stops[location].addPassenger(junaid);
+                Road.stops[location].addPassenger(junaid); //sets passenger to the station and removes them form the car
                 p.remove(i);
                 i--;
             }
         }
         Station coleplace = Road.stops[location];
-        for(int i = 0; i < coleplace.passList.size(); i++){
+        for(int i = 0; i < coleplace.passList.size(); i++){ 
             if(p.size() < 3 && coleplace.passList.size() > 0){
-                Passenger junaid = coleplace.passList.get(i);
+                Passenger junaid = coleplace.passList.get(i);//accesses the station that passenger is at
                 if(junaid.location != junaid.destination){
+                    //check to see if the direction of the car and the direction of the passenger are the same
                     if((direction == 1 && junaid.destination > junaid.location)|| (direction == -1 && junaid.destination < junaid.location)){
                         p.add(junaid);
                         coleplace.passList.remove(i);
@@ -68,7 +81,10 @@ public void move(){
         }
     }
 }
-
+/**
+ * gets total money and divides by total cars to get average
+ * @return avg
+ */
 public static double averageRevenue(){
     double avg = revenue/(double)(Road.cars.length);
     return avg;

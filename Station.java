@@ -1,25 +1,48 @@
 import java.util.*;
 public class Station {
+    //fields
+    /**
+     * ArrayList of passengers called passList
+     * Integer of number of stations called stationNum
+     */
     ArrayList<Passenger> passList;
     int stationNum;
-
+//constructor
+/**
+ * Initializes the arraylist and stationNum
+ * @param myStationNum
+ */
     public Station(int myStationNum){
         passList = new ArrayList<Passenger>();
         stationNum = myStationNum;
     }
-
+//methods
+/**
+ * Adds passenger to arraylist
+ * @param junaid
+ */
     public void addPassenger(Passenger junaid){
         passList.add(junaid);
     }
+/**
+ * REmoves passenger from arraylist
+ * @param junaid
+ */
     public void removePassenger(Passenger junaid){
         passList.remove(junaid);
     }
-
+/**
+ * Returns arraylist
+ * @return passList
+ */
     public ArrayList<Passenger> getList(){
         return passList;
         
     }
-
+/**
+ * Returns stationNum
+ * @return stationNum
+ */
     public int getStationNum(){
         return stationNum;
     }
