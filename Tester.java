@@ -4,5 +4,9 @@ public class Tester {
         System.out.println(r);
         r.roadUpdate();
         System.out.println(r);
+        System.out.println(Car.averageRevenue());
+        r.roadUpdate();
+        System.out.println(r);
+        System.out.println(Car.averageRevenue());
     }
 }
