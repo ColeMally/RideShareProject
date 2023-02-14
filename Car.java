@@ -44,13 +44,18 @@ public int getLoc(){
 public int getDest(){
     return destination;
 }
-
+/**
+ * gets direction
+ * @return direction
+ */
 public int getDirect(){
     return direction;
 }
 
 
-
+/**
+ * Method to move the car
+ */
 public void move(){
     revenue += p.size(); //$1 for each passenger in the car
     if(destination > location){ //if car destination > location then car will move forward
@@ -62,7 +67,7 @@ public void move(){
         while(p.size() != 0){
             Passenger junaid = p.get(0);
             junaid.setLocation(location);
-            Road.getStops(location).addPassenger(junaid); //moves passenger junaid into the car
+            Road.getStops()[location].addPassenger(junaid); //moves passenger junaid into the car
             p.remove(0);
         }
     }else{
@@ -70,12 +75,12 @@ public void move(){
             Passenger junaid = p.get(i);
             junaid.setLocation(location);
             if(location == junaid.getDestination()){
-                Road.stops[location].addPassenger(junaid); //sets passenger to the station and removes them form the car
+                Road.getStops()[location].addPassenger(junaid); //sets passenger to the station and removes them form the car
                 p.remove(i);
                 i--;
             }
         }
-        Station coleplace = Road.stops[location];
+        Station coleplace = Road.getStops()[location];
         for(int i = 0; i < coleplace.getList().size(); i++){ 
             if(p.size() < 3 && coleplace.getList().size() > 0){
                 Passenger junaid = coleplace.getList().get(i);//accesses the station that passenger is at

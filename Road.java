@@ -57,15 +57,24 @@ public class Road {
             mobile.move();
         }
     }
-
-    public Station[] getStops(){
+/**
+ * gets array stops
+ * @return stops
+ */
+    public static Station[] getStops(){
         return stops;
     }
-
-    public Car[] getCars(){
+/**
+ * gets array cars
+ * @return cars
+ */
+    public static Car[] getCars(){
         return cars;
     }
-
+/**
+ * gets array persons
+ * @return persons
+ */
     public Passenger[] getPassenger(){
         return persons;
     }
