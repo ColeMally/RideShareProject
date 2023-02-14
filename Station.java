@@ -11,8 +11,8 @@ public class Station {
      * ArrayList of passengers called passList
      * Integer of number of stations called stationNum
      */
-    ArrayList<Passenger> passList;
-    int stationNum;
+    private ArrayList<Passenger> passList;
+    private int stationNum;
 //constructor
 /**
  * Initializes the arraylist and stationNum
@@ -60,7 +60,7 @@ public class Station {
     public Passenger nextLeftPassenger(){
         for(int i = 0; i < passList.size(); i++){
             Passenger junaid = passList.get(i);
-            if(junaid.getDest() < stationNum){
+            if(junaid.getDestination() < stationNum){
                 passList.remove(i);
                 return junaid;
             }
@@ -75,7 +75,7 @@ public class Station {
     public Passenger nextRightPassenger(){
         for(int i = 0; i < passList.size(); i++){
             Passenger junaid = passList.get(i);
-            if(junaid.getDest() > stationNum){
+            if(junaid.getDestination() > stationNum){
                 passList.remove(i);
                 return junaid;
             }

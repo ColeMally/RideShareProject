@@ -12,9 +12,9 @@ public class Road {
      * Cars is for all cars
      * Persons is for passengers
      */
-    static Station [] stops;
-    static Car [] cars;
-    static Passenger [] persons;
+    private static Station [] stops;
+    private static Car [] cars;
+    private static Passenger [] persons;
     //constructor
     /**
      * Debug constructor for the Road-- just makes 5 stops and puts some passengers in
@@ -56,6 +56,18 @@ public class Road {
         for(Car mobile : cars){
             mobile.move();
         }
+    }
+
+    public Station[] getStops(){
+        return stops;
+    }
+
+    public Car[] getCars(){
+        return cars;
+    }
+
+    public Passenger[] getPassenger(){
+        return persons;
     }
 
     public String toString(){

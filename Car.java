@@ -12,10 +12,10 @@ public class Car {
      * static revenue so it can be accessed by all the cars
      */
     public ArrayList<Passenger> p;
-    int location;
-    int destination;
-    int direction;
-    static int revenue = 0;
+    private int location;
+    private int destination;
+    private int direction;
+    private static int revenue = 0;
     //constructors
     //initialization of arraylist of passengers and of location and destination integers
 public Car(int myLocation, int myDestination){
@@ -45,6 +45,11 @@ public int getDest(){
     return destination;
 }
 
+public int getDirect(){
+    return direction;
+}
+
+
 
 public void move(){
     revenue += p.size(); //$1 for each passenger in the car
@@ -57,28 +62,28 @@ public void move(){
         while(p.size() != 0){
             Passenger junaid = p.get(0);
             junaid.setLocation(location);
-            Road.stops[location].addPassenger(junaid); //moves passenger junaid into the car
+            Road.getStops(location).addPassenger(junaid); //moves passenger junaid into the car
             p.remove(0);
         }
     }else{
         for(int i = 0; i < p.size(); i++){
             Passenger junaid = p.get(i);
             junaid.setLocation(location);
-            if(location == junaid.destination){
+            if(location == junaid.getDestination()){
                 Road.stops[location].addPassenger(junaid); //sets passenger to the station and removes them form the car
                 p.remove(i);
                 i--;
             }
         }
         Station coleplace = Road.stops[location];
-        for(int i = 0; i < coleplace.passList.size(); i++){ 
-            if(p.size() < 3 && coleplace.passList.size() > 0){
-                Passenger junaid = coleplace.passList.get(i);//accesses the station that passenger is at
-                if(junaid.location != junaid.destination){
+        for(int i = 0; i < coleplace.getList().size(); i++){ 
+            if(p.size() < 3 && coleplace.getList().size() > 0){
+                Passenger junaid = coleplace.getList().get(i);//accesses the station that passenger is at
+                if(junaid.getLocation() != junaid.getDestination()){
                     //check to see if the direction of the car and the direction of the passenger are the same
-                    if((direction == 1 && junaid.destination > junaid.location)|| (direction == -1 && junaid.destination < junaid.location)){
+                    if((direction == 1 && junaid.getDestination() > junaid.getLocation())|| (direction == -1 && junaid.getDestination() < junaid.getLocation())){
                         p.add(junaid);
-                        coleplace.passList.remove(i);
+                        coleplace.getList().remove(i);
                         i--;
                     }
                 }
@@ -91,7 +96,7 @@ public void move(){
  * @return avg
  */
 public static double averageRevenue(){
-    double avg = revenue/(double)(Road.cars.length);
+    double avg = revenue/(double)(Road.getCars().length);
     return avg;
 }
 }

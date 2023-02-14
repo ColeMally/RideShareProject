@@ -5,15 +5,15 @@
  * as well as methods for setting the passenger's location
  */
 public class Passenger{
-    int destination;
-    int location;
+    private int destination;
+    private int location;
     //constructing passenger fields
     public Passenger(int myLocation, int myDestination){
         location = myLocation;
         destination = myDestination;
     }
     // returns destination
-    public int getDest(){
+    public int getDestination(){
         return destination;
     }
     //returns location
